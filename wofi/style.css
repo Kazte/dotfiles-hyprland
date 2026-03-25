@@ -1,0 +1,50 @@
+@import url("/home/kazte/.cache/wal/colors.css");
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+}
+
+window {
+  background-image: url("/home/kazte/.config/wofi/berserk.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  background-blend-mode: overlay;
+
+  border: none;
+}
+
+/* input */
+#input {
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 3px;
+
+  border: 1px solid @color1;        /* 🔴 rojo wal */
+  background-color: rgba(20, 20, 20, 0.85);
+  color: @foreground;
+}
+
+/* entries */
+#entry {
+  padding: 10px;
+  border-radius: 3px;
+}
+
+#entry:selected {
+  background-color: @color1;        /* rojo oscuro */
+  color: @background;
+}
+
+/* texto */
+#text {
+  color: @foreground;
+}
+
+/* iconos */
+#img {
+  margin-right: 10px;
+}

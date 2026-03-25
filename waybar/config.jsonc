@@ -1,0 +1,88 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "modules-left": [
+    "custom/os",
+    "hyprland/workspaces",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "bluetooth",
+    "battery",
+    "custom/weather",
+    "clock"
+  ],
+  "custom/os": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "sh -c 'wofi --show drun --style ~/.config/wofi/style.css --allow-images >/dev/null 2>&1 &'"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate"
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "all-outputs": false,
+    "active-first": false
+  },
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "max-length": 80,
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "{:%d/%m/%Y  %H:%M}",
+    "tooltip-format": "{:%A %d %B %Y}",
+    "on-click": "gsimplecal"
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "⚠"
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": ""
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": " off",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+  "battery": {
+    "format": " {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
+  },
+ "custom/weather": {
+    "interval": 900, // in seconds = 15 minutes
+    "exec": "exec ~/.config/waybar/scripts/weather/get_weather.rb",
+    "return-type": "json",
+    "markup": true,
+    "tooltip": true,
+    "on-scroll-up": "~/.config/waybar/scripts/weather/get_weather.rb --next && pkill -RTMIN+5 waybar",
+    "on-scroll-down": "~/.config/waybar/scripts/weather/get_weather.rb --prev && pkill -RTMIN+5 waybar",
+    "on-click": "~/.config/waybar/scripts/weather/get_weather.rb --toggle && pkill -RTMIN+5 waybar",
+    "on-click-right": "~/.config/waybar/scripts/weather/get_weather.rb --toggle && pkill -RTMIN+5 waybar"
+  } ,
+  "tray": {
+    "spacing": 8
+  }
+}

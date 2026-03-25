@@ -1,0 +1,106 @@
+@import url("/home/kazte/.cache/wal/colors-waybar.css");
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: alpha(@background, 0.9);
+  color: @foreground;
+}
+
+/* tooltip */
+tooltip {
+  background: @background;
+  border-radius: 3px;
+  color: @foreground;
+}
+
+/* LOGO */
+#custom-os {
+  padding: 0 12px;
+  margin: 4px;
+  color: @color1;
+  background: alpha(@color1, 0.50);
+  border-radius: 3px;
+}
+
+#custom-os:hover {
+  background: alpha(@color1, 0.30);
+}
+
+/* WORKSPACES (sin borde, más contraste) */
+#workspaces {
+  margin: 4px 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 3px;
+  color: @foreground;
+  background: alpha(@color0, 0.35);
+  border: none;
+  border-radius: 3px;
+}
+
+#workspaces button:hover {
+  background: alpha(@color1, 0.22);
+}
+
+#workspaces button.active {
+  background: @color1;
+  color: @background;
+}
+
+#workspaces button.urgent {
+  background: @color3;
+  color: @background;
+}
+
+/* ventana centro */
+#window {
+  margin: 4px 8px;
+  padding: 0 12px;
+  color: @foreground;
+  background: alpha(@color0, 0.35);
+  border-radius: 3px;
+}
+
+/* derecha (sin bordes, más sólidos) */
+#clock,
+#network,
+#pulseaudio,
+#bluetooth,
+#battery,
+#tray {
+  margin: 4px 3px;
+  padding: 0 10px;
+  background: alpha(@color0, 0.45);
+  border: none;
+  border-radius: 3px;
+  color: @foreground;
+}
+
+/* acento reloj */
+#clock {
+  color: @color1;
+}
+
+/* estados */
+#network.disconnected,
+#pulseaudio.muted,
+#bluetooth.disabled,
+#battery.warning {
+  color: @color3;
+}
+
+#battery.critical {
+  color: @color1;
+}
+
+/* tray */
+#tray {
+  padding-right: 12px;
+}
